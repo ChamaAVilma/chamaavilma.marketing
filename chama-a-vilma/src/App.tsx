@@ -99,7 +99,7 @@ export default function App() {
             <div className="hero-visual">
               <figure className="hero-photo">
                 <img
-                  src="/images/diarista-principal.jpg"
+                  src="/images/diarista-principal.jpeg"
                   alt="Profissional realizando a limpeza de uma residência"
                   fetchPriority="high"
                   width="900"
@@ -255,7 +255,7 @@ export default function App() {
               <Button
                 onClick={() => {
                   window.open(
-                    "https://wa.me/5511924836690?text=" +
+                    "https://wa.me/5511958265319?text=" +
                       encodeURIComponent(
                         "Olá! Conheci a Chama a Vilma pelo site e gostaria de solicitar informações sobre os serviços e um orçamento.",
                       ),
