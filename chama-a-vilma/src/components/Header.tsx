@@ -27,7 +27,7 @@ export function Header() {
         >
           <img
             className="brand-logo"
-            src="/logo-vilma.png"
+            src="/logo-vilma.jpg"
             alt=""
             width="56"
             height="56"

@@ -1,49 +1,48 @@
 
-/*
- * Chama a Vilma
- * Design tokens — identidade visual
- */
-
 :root {
-  /* Cores da marca */
-  --color-primary: #0756a5;
-  --color-primary-dark: #073b70;
-  --color-primary-light: #e7f4ff;
+  /* Identidade da marca */
+  --color-primary: #32145B;
+  --color-primary-dark: #210B40;
+  --color-primary-light: #F3EAFB;
+  --color-primary-action: #7540A6;
+  --color-lilac: #B78AD9;
+  --color-accent: #D99A36;
 
-  /* Cores neutras */
-  --color-white: #ffffff;
-  --color-background: #f7faff;
-  --color-surface: #ffffff;
-  --color-text: #172b40;
-  --color-text-muted: #5b6b7c;
-  --color-border: #dce6f0;
+  /* Superfícies */
+  --color-white: #FFFDFE;
+  --color-background: #FAF7FC;
+  --color-surface: #FFFFFF;
+  --color-surface-soft: #F3EAFB;
 
-  /* Cores de interação */
+  /* Textos e bordas */
+  --color-text: #292333;
+  --color-text-muted: #6D6476;
+  --color-border: #E4DCEB;
+  --color-focus: #D99A36;
+
+  /* WhatsApp: manter a cor reconhecível do serviço */
   --color-whatsapp: #168553;
-  --color-focus: #ffbf47;
 
   /* Tipografia */
   --font-family-base: Arial, Helvetica, sans-serif;
-
-  /* Espaçamentos */
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-6: 1.5rem;
-  --space-8: 2rem;
-  --space-12: 3rem;
-  --space-16: 4rem;
 
   /* Layout */
   --container-width: 1200px;
   --header-height: 76px;
 
-  /* Bordas e sombras */
+  /* Espaçamentos */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+
+  /* Cantos e sombras */
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 22px;
-
-  --shadow-card:
-    0 8px 30px rgb(7 59 112 / 8%);
+  --radius-pill: 999px;
+  --shadow-card: 0 8px 28px rgb(50 20 91 / 8%);
 }
