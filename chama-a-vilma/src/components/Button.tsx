@@ -1,5 +1,6 @@
 
 import type { ButtonHTMLAttributes } from "react";
+import "./Button.css";
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "primary" | "secondary";

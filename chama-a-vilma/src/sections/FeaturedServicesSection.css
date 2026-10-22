@@ -1,0 +1,108 @@
+
+/* Cards de serviços em destaque */
+
+.services {
+  background: var(--color-surface);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.service-reveal,
+.benefit-reveal {
+  min-width: 0;
+  height: 100%;
+}
+
+.service-card {
+  height: 100%;
+  padding: 0 0 26px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  transition:
+    transform 260ms ease,
+    box-shadow 260ms ease,
+    border-color 260ms ease;
+}
+
+.service-card:first-child .service-photo {
+  object-position: center 30%;
+}
+
+.service-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center;
+  background: var(--color-primary-light);
+  transition: transform 500ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.service-icon {
+  display: grid;
+  width: 62px;
+  height: 62px;
+  margin: 24px 24px 0;
+  place-items: center;
+  color: var(--color-primary-action);
+  background: var(--color-primary-light);
+  border-radius: 18px;
+}
+
+/* Estilos compartilhados com os cards de benefícios */
+
+.service-card h3,
+.benefit-item h3 {
+  margin: 18px 24px 10px;
+  color: var(--color-primary-dark);
+  font-size: 1.25rem;
+}
+
+.service-card > p,
+.benefit-item > p {
+  margin-right: 24px;
+  margin-left: 24px;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 14px 24px 0;
+  color: var(--color-primary-action);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 560px) {
+  .service-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .service-card {
+    padding-bottom: 22px;
+  }
+
+  .service-icon {
+    margin: 20px 20px 0;
+  }
+
+  .service-card h3,
+  .service-card > p,
+  .service-card .text-link {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+}

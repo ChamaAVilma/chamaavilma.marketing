@@ -3,6 +3,8 @@ import { MapPin } from "lucide-react";
 
 import { Reveal } from "../components/Reveal";
 
+import "./CoverageSection.css";
+
 const cities = [
   "São Paulo",
   "Santo André",

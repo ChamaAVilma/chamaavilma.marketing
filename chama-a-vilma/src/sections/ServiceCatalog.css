@@ -1,6 +1,5 @@
-
 .catalog {
-  background: #f7faff;
+  background: var(--color-background);
 }
 
 .catalog-heading {
@@ -61,7 +60,7 @@
   border: 1px solid var(--color-border);
   border-radius: 16px;
   background: #fff;
-  box-shadow: 0 12px 32px rgb(7 59 112 / 5%);
+  box-shadow: var(--shadow-card);
 }
 
 .catalog-table {
@@ -72,13 +71,13 @@
 }
 
 .catalog-table thead {
-  background: #eaf4ff;
+  background: var(--color-primary-light);
 }
 
 .catalog-table th,
 .catalog-table td {
   padding: 19px 20px;
-  border-bottom: 1px solid #e8eef5;
+  border-bottom: 1px solid var(--color-border);
   vertical-align: middle;
 }
 
@@ -100,7 +99,7 @@
 }
 
 .catalog-row:hover {
-  background: #f5faff;
+  background: var(--color-surface-soft);
 }
 
 .catalog-service-name,

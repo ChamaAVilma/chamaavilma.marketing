@@ -7,6 +7,8 @@ import {
 
 import { Reveal } from "../components/Reveal";
 
+import "./BenefitsSection.css";
+
 const benefits = [
   {
     title: "Atendimento próximo",

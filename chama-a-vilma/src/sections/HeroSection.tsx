@@ -6,6 +6,7 @@ import {
 } from "lucide-react";
 
 import { Reveal } from "../components/Reveal";
+import "./HeroSection.css";
 
 export function HeroSection() {
   return (

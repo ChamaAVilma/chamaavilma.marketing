@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "../components/Button";
 import { Reveal } from "../components/Reveal";
 import { getWhatsAppUrl } from "../data/contact";
+import "./ContactSection.css";
 
 const WHATSAPP_MESSAGE =
   "Olá! Conheci a Chama a Vilma pelo site e gostaria de solicitar informações sobre os serviços e um orçamento.";

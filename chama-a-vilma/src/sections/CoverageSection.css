@@ -1,0 +1,62 @@
+
+/* Cobertura de atendimento */
+
+.coverage {
+  background: var(--color-surface);
+}
+
+.coverage-content {
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.coverage-intro {
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.coverage-icon {
+  display: grid;
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 20px;
+  place-items: center;
+  color: var(--color-primary-action);
+  background: var(--color-primary-light);
+  border-radius: 50%;
+}
+
+.city-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.city-reveal {
+  display: inline-flex;
+}
+
+.city-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 13px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  color: var(--color-primary-dark);
+  background: var(--color-primary-light);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 560px) {
+  .city-list {
+    gap: 8px;
+  }
+
+  .city-chip {
+    font-size: 0.78rem;
+  }
+}
