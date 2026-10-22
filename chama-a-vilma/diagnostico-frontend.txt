@@ -1,0 +1,2073 @@
+﻿
+
+========== src\App.css ==========
+
+/* =========================================================
+   CHAMA A VILMA â€” estilos globais da pÃ¡gina
+   Responsabilidade: layout, componentes e seÃ§Ãµes do App.
+   O catÃ¡logo de serviÃ§os mantÃ©m seus estilos em ServiceCatalog.css.
+   ========================================================= */
+
+:root {
+  --transition-smooth: 180ms ease;
+  --transition-reveal: 750ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* 1. CabeÃ§alho e identidade */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgb(255 253 254 / 96%);
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(14px);
+}
+
+.header-content {
+  display: flex;
+  min-height: var(--header-height);
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.brand-icon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  place-items: center;
+  color: var(--color-white);
+  background: var(--color-primary);
+  border-radius: 14px;
+}
+
+.brand-logo {
+  display: block;
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.footer-brand .brand-logo {
+  width: 48px;
+  height: 48px;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.brand-text strong {
+  color: var(--color-primary-dark);
+  font-size: 1.05rem;
+}
+
+.brand-text small {
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+}
+
+.main-navigation {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.main-navigation > a:not(.button) {
+  color: var(--color-text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--transition-smooth);
+}
+
+.main-navigation > a:not(.button):hover {
+  color: var(--color-primary-action);
+}
+
+.menu-toggle {
+  display: none;
+  padding: 8px;
+  border: 0;
+  color: var(--color-primary-dark);
+  background: transparent;
+  cursor: pointer;
+}
+
+/* 2. BotÃµes */
+
+.button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-size: 0.94rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background var(--transition-smooth),
+    color var(--transition-smooth),
+    border-color var(--transition-smooth),
+    transform var(--transition-smooth),
+    box-shadow var(--transition-smooth);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button--primary {
+  color: var(--color-white);
+  background: var(--color-primary-action);
+  box-shadow: 0 6px 18px rgb(50 20 91 / 16%);
+}
+
+.button--primary:hover {
+  background: var(--color-primary-dark);
+}
+
+.button--secondary {
+  color: var(--color-primary-dark);
+  background: var(--color-white);
+  border-color: var(--color-border);
+}
+
+.button--secondary:hover {
+  border-color: var(--color-lilac);
+  background: var(--color-primary-light);
+}
+
+.header-cta {
+  min-height: 42px;
+  padding: 10px 16px;
+  white-space: nowrap;
+}
+
+/* 3. Hero */
+
+.hero {
+  position: relative;
+  overflow: clip;
+  background:
+    radial-gradient(ellipse at 85% 20%, rgb(183 138 217 / 22%), transparent 42%),
+    linear-gradient(130deg, #fffdfE 20%, #f3eafb 100%);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  align-items: center;
+  gap: 64px;
+}
+
+.hero-content {
+  padding-block: 24px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-primary-action);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 650px;
+  margin: 22px 0;
+  color: var(--color-primary-dark);
+  font-size: clamp(2.5rem, 4.5vw, 4.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.055em;
+}
+
+.hero h1 span,
+.section-heading h2 span,
+.coverage h2 span,
+.contact h2 span {
+  color: var(--color-primary-action);
+}
+
+.hero-description {
+  max-width: 520px;
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 1.08rem;
+  line-height: 1.85;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.hero-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  color: var(--color-text-muted);
+  font-size: 0.86rem;
+}
+
+.hero-note svg {
+  flex-shrink: 0;
+  color: var(--color-primary-action);
+}
+
+.hero-visual {
+  position: relative;
+  min-width: 0;
+  padding: 12px 0 28px 12px;
+}
+
+.hero-photo {
+  position: relative;
+  max-height: 590px;
+  margin: 0;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  border-radius: 12px 90px 12px 12px;
+  background: var(--color-primary-light);
+}
+
+.hero-photo > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-photo-caption {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid rgb(255 255 255 / 75%);
+  border-radius: 10px;
+  background: rgb(255 253 254 / 95%);
+  box-shadow: 0 8px 24px rgb(50 20 91 / 10%);
+}
+
+.caption-mark {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  place-items: center;
+  color: var(--color-primary-action);
+  background: var(--color-primary-light);
+  border-radius: 50%;
+}
+
+.hero-photo-caption strong,
+.hero-photo-caption small {
+  display: block;
+}
+
+.hero-photo-caption strong {
+  color: var(--color-primary-dark);
+  font-size: 0.9rem;
+}
+
+.hero-photo-caption small {
+  margin-top: 4px;
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+/* Compatibilidade caso o cartÃ£o flutuante seja usado no hero */
+
+.hero-floating-card {
+  position: absolute;
+  right: -6px;
+  bottom: 0;
+  display: flex;
+  max-width: 280px;
+  align-items: center;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.floating-icon {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  place-items: center;
+  color: var(--color-primary-action);
+  background: var(--color-primary-light);
+  border-radius: 12px;
+}
+
+.hero-floating-card strong {
+  color: var(--color-primary-dark);
+  font-size: 0.9rem;
+}
+
+.hero-floating-card p {
+  margin: 4px 0 0;
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+}
+
+/* 4. TÃ­tulos e cabeÃ§alhos de seÃ§Ã£o */
+
+.section-heading {
+  max-width: 700px;
+  margin: 0 auto 44px;
+  text-align: center;
+}
+
+.section-heading h2,
+.coverage h2,
+.contact h2 {
+  margin: 16px 0;
+  color: var(--color-primary-dark);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+
+.section-heading > p,
+.coverage-content > p,
+.contact-panel > p {
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+/* 5. Cards de serviÃ§os em destaque */
+
+.services {
+  background: var(--color-surface);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.service-reveal,
+.benefit-reveal {
+  min-width: 0;
+  height: 100%;
+}
+
+.service-card {
+  height: 100%;
+  padding: 0 0 26px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  transition:
+    transform 260ms ease,
+    box-shadow 260ms ease,
+    border-color 260ms ease;
+}
+
+.service-card:first-child .service-photo {
+  object-position: center 30%;
+}
+
+.service-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center;
+  background: var(--color-primary-light);
+  transition: transform 500ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.service-icon {
+  display: grid;
+  width: 62px;
+  height: 62px;
+  margin: 24px 24px 0;
+  place-items: center;
+  color: var(--color-primary-action);
+  background: var(--color-primary-light);
+  border-radius: 18px;
+}
+
+.service-card h3,
+.benefit-item h3 {
+  margin: 18px 24px 10px;
+  color: var(--color-primary-dark);
+  font-size: 1.25rem;
+}
+
+.service-card > p,
+.benefit-item > p {
+  margin-right: 24px;
+  margin-left: 24px;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 14px 24px 0;
+  color: var(--color-primary-action);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+/* 6. BenefÃ­cios */
+
+.benefits {
+  background: var(--color-background);
+}
+
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.benefit-item {
+  height: 100%;
+  padding: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.benefit-icon {
+  color: var(--color-primary-action);
+}
+
+/* 7. Cobertura de atendimento */
+
+.coverage {
+  background: var(--color-surface);
+}
+
+.coverage-content {
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.coverage-intro {
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.coverage-icon {
+  display: grid;
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 20px;
+  place-items: center;
+  color: var(--color-primary-action);
+  background: var(--color-primary-light);
+  border-radius: 50%;
+}
+
+.city-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.city-reveal {
+  display: inline-flex;
+}
+
+.city-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 13px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  color: var(--color-primary-dark);
+  background: var(--color-primary-light);
+  font-size: 0.85rem;
+}
+
+/* 8. Contato */
+
+.contact {
+  padding-top: 16px;
+}
+
+.contact-panel {
+  padding: 64px 28px;
+  overflow: hidden;
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at 10% 0%, rgb(183 138 217 / 24%), transparent 35%),
+    linear-gradient(135deg, #f3eafb, #fffdfE);
+  text-align: center;
+}
+
+.contact-panel > p {
+  max-width: 580px;
+  margin: 0 auto 26px;
+}
+
+.contact-panel > .button {
+  margin-inline: auto;
+}
+
+.contact-panel > small {
+  display: block;
+  margin-top: 16px;
+  color: var(--color-text-muted);
+}
+
+/* 9. RodapÃ© */
+
+.site-footer {
+  padding-block: 32px;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-primary-dark);
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-content .brand-text strong,
+.footer-content .brand-text small {
+  color: var(--color-white);
+}
+
+.footer-content > p,
+.footer-content > span {
+  color: rgb(255 255 255 / 78%);
+  font-size: 0.82rem;
+}
+
+.footer-content > p {
+  margin: 0;
+}
+
+.footer-content .brand-icon {
+  color: var(--color-primary-dark);
+  background: var(--color-white);
+}
+
+/* 10. Estados de foco e acessibilidade */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .service-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--color-lilac);
+    box-shadow: 0 18px 42px rgb(50 20 91 / 12%);
+  }
+
+  .service-card:hover .service-photo {
+    transform: scale(1.045);
+  }
+}
+
+/* 11. AnimaÃ§Ã£o de entrada ao rolar a pÃ¡gina */
+
+.reveal {
+  opacity: 0;
+  transition:
+    opacity 650ms ease,
+    transform var(--transition-reveal);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal--left {
+  transform: translate3d(-56px, 0, 0);
+}
+
+.reveal--right {
+  transform: translate3d(56px, 0, 0);
+}
+
+.reveal--top {
+  transform: translate3d(0, -40px, 0);
+}
+
+.reveal--bottom {
+  transform: translate3d(0, 40px, 0);
+}
+
+
+/* Entrada cinematogrÃ¡fica dos elementos */
+
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 76px, 0) scale(0.94);
+  transform-origin: center;
+  filter: blur(3px);
+
+  transition:
+    opacity 650ms ease,
+    transform 950ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 700ms ease;
+
+  transition-delay: var(--reveal-delay, 0ms);
+  backface-visibility: hidden;
+}
+
+/* DireÃ§Ãµes de entrada */
+
+.reveal--left {
+  transform: translate3d(-100px, 0, 0) scale(0.94);
+}
+
+.reveal--right {
+  transform: translate3d(100px, 0, 0) scale(0.94);
+}
+
+.reveal--top {
+  transform: translate3d(0, -75px, 0) scale(0.94);
+}
+
+.reveal--bottom {
+  transform: translate3d(0, 76px, 0) scale(0.94);
+}
+
+/* Estado final */
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: blur(0);
+}
+
+/* Movimento reduzido para acessibilidade */
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal--left,
+  .reveal--right,
+  .reveal--top,
+  .reveal--bottom,
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+}
+
+
+/* 12. Responsividade: notebooks e tablets */
+
+@media (max-width: 1000px) {
+  .main-navigation {
+    gap: 14px;
+  }
+
+  .main-navigation > a:not(.button) {
+    font-size: 0.82rem;
+  }
+
+  .header-cta {
+    padding-inline: 12px;
+    font-size: 0.82rem;
+  }
+
+  .hero-grid {
+    gap: 32px;
+  }
+
+  .hero-photo {
+    max-height: 500px;
+  }
+}
+
+/* 13. NavegaÃ§Ã£o mÃ³vel */
+
+@media (max-width: 800px) {
+  .header-content {
+    min-height: 70px;
+  }
+
+  .menu-toggle {
+    display: grid;
+    place-items: center;
+  }
+
+  .main-navigation {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: none;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0;
+    padding: 12px 20px 20px;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-surface);
+    box-shadow: 0 18px 25px rgb(50 20 91 / 8%);
+  }
+
+  .main-navigation.is-open {
+    display: flex;
+  }
+
+  .main-navigation > a:not(.button) {
+    padding-block: 13px;
+    font-size: 0.95rem;
+  }
+
+  .header-cta {
+    margin-top: 10px;
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .hero-content {
+    padding-bottom: 0;
+  }
+
+  .hero-visual {
+    width: 100%;
+    max-width: 560px;
+    margin-inline: auto;
+    padding-left: 0;
+  }
+
+  .benefit-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .footer-content {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* 14. Celulares */
+
+@media (max-width: 560px) {
+  .hero h1 {
+    font-size: clamp(2.35rem, 10vw, 3.2rem);
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+  }
+
+  .hero-photo {
+    aspect-ratio: 4 / 4.2;
+    border-top-right-radius: 60px;
+  }
+
+  .hero-photo-caption {
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    padding: 12px;
+  }
+
+  .hero-floating-card {
+    right: 0;
+    max-width: 250px;
+    padding: 12px;
+  }
+
+  .service-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .service-card {
+    padding-bottom: 22px;
+  }
+
+  .service-icon {
+    margin: 20px 20px 0;
+  }
+
+  .service-card h3,
+  .service-card > p,
+  .service-card .text-link {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .section-heading {
+    margin-bottom: 30px;
+  }
+
+  .contact-panel {
+    padding: 44px 20px;
+    border-radius: 22px;
+  }
+
+  .contact h2 br,
+  .section-heading h2 br {
+    display: none;
+  }
+
+  .city-list {
+    gap: 8px;
+  }
+
+  .city-chip {
+    font-size: 0.78rem;
+  }
+}
+
+
+========== src\index.css ==========
+
+@import "./styles/variables.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 16px);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: var(--font-family-base);
+  color: var(--color-text);
+  background: var(--color-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+::selection {
+  color: var(--color-white);
+  background: var(--color-primary);
+}
+
+.container {
+  width: min(calc(100% - 2rem), var(--container-width));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--spacing-3xl);
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding-block: var(--spacing-2xl);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+
+========== src\main.tsx ==========
+
+
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App.tsx";
+
+createRoot(document.getElementById("root")!).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+);
+
+
+
+========== src\components\Header.tsx ==========
+
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+
+const navigation = [
+  { label: "InÃ­cio", href: "#inicio" },
+  { label: "ServiÃ§os", href: "#servicos" },
+  { label: "Para empresas", href: "#empresas" },
+  { label: "Atendimento", href: "#atendimento" },
+  { label: "Contato", href: "#contato" },
+];
+
+export function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  function closeMenu() {
+    setMenuOpen(false);
+  }
+
+  return (
+    <header className="site-header">
+      <div className="container header-content">
+        <a
+          href="#inicio"
+          className="brand"
+          aria-label="Chama a Vilma â€” pÃ¡gina inicial"
+          onClick={closeMenu}
+        >
+          <img
+            className="brand-logo"
+            src="/logo-vilma.jpg"
+            alt=""
+            width="56"
+            height="56"
+          />
+
+          <span className="brand-text">
+            <strong>Chama a Vilma</strong>
+            <small>Limpeza e conservaÃ§Ã£o</small>
+          </span>
+        </a>
+
+        <button
+          type="button"
+          className="menu-toggle"
+          aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={menuOpen}
+          aria-controls="main-navigation"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+
+        <nav
+          id="main-navigation"
+          className={`main-navigation ${menuOpen ? "is-open" : ""}`}
+          aria-label="NavegaÃ§Ã£o principal"
+        >
+          {navigation.map((item) => (
+            <a key={item.href} href={item.href} onClick={closeMenu}>
+              {item.label}
+            </a>
+          ))}
+
+          <a
+            className="button button--primary header-cta"
+            href="#contato"
+            onClick={closeMenu}
+          >
+            Solicitar orÃ§amento
+          </a>
+        </nav>
+      </div>
+    </header>
+  );
+}
+
+
+
+========== src\components\Button.tsx ==========
+
+
+import type { ButtonHTMLAttributes } from "react";
+
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+  variant?: "primary" | "secondary";
+};
+
+export function Button({
+  variant = "primary",
+  className = "",
+  children,
+  ...props
+}: ButtonProps) {
+  return (
+    <button
+      className={`button button--${variant} ${className}`.trim()}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+}
+
+
+
+========== src\components\Reveal.tsx ==========
+
+
+import {
+  useEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+  type HTMLAttributes,
+} from "react";
+
+type RevealDirection = "left" | "right" | "top" | "bottom";
+
+interface RevealProps extends HTMLAttributes<HTMLDivElement> {
+  direction?: RevealDirection;
+  delay?: number;
+}
+
+export function Reveal({
+  children,
+  direction = "bottom",
+  delay = 0,
+  className = "",
+  style,
+  ...props
+}: RevealProps) {
+  const elementRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const element = elementRef.current;
+
+    if (!element) return;
+
+    // Exibe o conteÃºdo normalmente quando o navegador nÃ£o suporta
+    // IntersectionObserver.
+    if (!("IntersectionObserver" in window)) {
+      setIsVisible(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -24px 0px",
+      },
+    );
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, []);
+
+  const revealStyle = {
+    ...style,
+    "--reveal-delay": `${Math.max(0, delay)}ms`,
+  } as CSSProperties;
+
+  const classes = [
+    "reveal",
+    `reveal--${direction}`,
+    isVisible ? "is-visible" : "",
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  return (
+    <div
+      ref={elementRef}
+      className={classes}
+      style={revealStyle}
+      {...props}
+    >
+      {children}
+    </div>
+  );
+}
+
+
+
+========== src\components\SiteFooter.tsx ==========
+
+
+import { Sparkles } from "lucide-react";
+
+export function SiteFooter() {
+  return (
+    <footer className="site-footer">
+      <div className="container footer-content">
+        <a href="#inicio" className="brand footer-brand">
+          <span className="brand-icon">
+            <Sparkles size={22} aria-hidden="true" />
+          </span>
+
+          <span className="brand-text">
+            <strong>Chama a Vilma</strong>
+            <small>Limpeza e conservaÃ§Ã£o</small>
+          </span>
+        </a>
+
+        <p>Limpeza e organizaÃ§Ã£o para diferentes ambientes.</p>
+
+        <span>
+          Â© {new Date().getFullYear()} Chama a Vilma.
+        </span>
+      </div>
+    </footer>
+  );
+}
+
+
+
+========== src\sections\HeroSection.tsx ==========
+
+
+import {
+  ArrowRight,
+  CheckCircle2,
+  Sparkles,
+} from "lucide-react";
+
+import { Reveal } from "../components/Reveal";
+
+export function HeroSection() {
+  return (
+    <section className="hero section" id="inicio">
+      <div className="container hero-grid">
+        <Reveal direction="left" className="hero-content-reveal">
+          <div className="hero-content">
+            <span className="eyebrow">
+              <Sparkles size={16} aria-hidden="true" />
+              Cuidado que faz a diferenÃ§a
+            </span>
+
+            <h1>
+              Seu espaÃ§o limpo.
+              <br />
+              Sua rotina mais <span>leve.</span>
+            </h1>
+
+            <p className="hero-description">
+              ConheÃ§a a Chama a Vilma e encontre serviÃ§os de limpeza para sua
+              casa ou empresa. Entre em contato para consultar as opÃ§Ãµes
+              disponÃ­veis para vocÃª.
+            </p>
+
+            <div className="hero-actions">
+              <a href="#contato" className="button button--primary">
+                Solicitar orÃ§amento
+                <ArrowRight size={18} aria-hidden="true" />
+              </a>
+
+              <a href="#servicos" className="button button--secondary">
+                Conhecer serviÃ§os
+              </a>
+            </div>
+
+            <div className="hero-note">
+              <CheckCircle2 size={18} aria-hidden="true" />
+              <span>Atendimento residencial e empresarial</span>
+            </div>
+          </div>
+        </Reveal>
+
+        <Reveal direction="right" className="hero-visual-reveal">
+          <div className="hero-visual">
+            <figure className="hero-photo">
+              <img
+                src="/images/diarista-principal.jpeg"
+                alt="Profissional realizando a limpeza de uma residÃªncia"
+                fetchPriority="high"
+                width={900}
+                height={1100}
+              />
+
+              <figcaption className="hero-photo-caption">
+                <span className="caption-mark" aria-hidden="true">
+                  <Sparkles size={20} />
+                </span>
+
+                <span>
+                  <strong>Cuidado em cada detalhe</strong>
+                  <small>Um ambiente limpo faz diferenÃ§a.</small>
+                </span>
+              </figcaption>
+            </figure>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+
+
+========== src\sections\FeaturedServicesSection.tsx ==========
+
+
+import { ArrowRight } from "lucide-react";
+
+import { Reveal } from "../components/Reveal";
+
+const services = [
+  {
+    title: "Limpeza residencial",
+    description:
+      "Cuidado com casas e apartamentos, respeitando as necessidades de cada ambiente.",
+    icon: House,
+    image: "/images/limpeza-sala.jpg",
+    imageAlt: "Sala residencial durante um serviÃ§o de limpeza",
+    href: "#contato",
+  },
+  {
+    title: "Limpeza empresarial",
+    description:
+      "Mais cuidado com escritÃ³rios, lojas e espaÃ§os de trabalho.",
+    icon: Building2,
+    image: "/images/limpeza-cozinha.jpg",
+    imageAlt: "Ambiente sendo cuidado durante um serviÃ§o de limpeza",
+    href: "#contato",
+  },
+];
+
+const revealDirections = ["left", "bottom", "right", "top"] as const;
+
+import { Building2, House } from "lucide-react";
+
+export function FeaturedServicesSection() {
+  return (
+    <section className="services section" id="servicos">
+      <div className="container">
+        <Reveal direction="bottom">
+          <div className="section-heading">
+            <span className="eyebrow">Nossas soluÃ§Ãµes</span>
+
+            <h2>
+              Cuidado para cada <span>ambiente</span>
+            </h2>
+
+            <p>
+              ConheÃ§a algumas das nossas principais categorias de atendimento
+              e consulte as condiÃ§Ãµes para o seu espaÃ§o.
+            </p>
+          </div>
+        </Reveal>
+
+        <div className="service-grid">
+          {services.map((service, index) => {
+            const Icon = service.icon;
+            const direction =
+              revealDirections[index % revealDirections.length];
+
+            return (
+              <Reveal
+                key={service.title}
+                direction={direction}
+                delay={index * 100}
+                className="service-reveal"
+              >
+                <article className="service-card">
+                  <img
+                    className="service-photo"
+                    src={service.image}
+                    alt={service.imageAlt}
+                    loading="lazy"
+                    width={720}
+                    height={480}
+                  />
+
+                  <div className="service-icon">
+                    <Icon size={30} aria-hidden="true" />
+                  </div>
+
+                  <h3>{service.title}</h3>
+
+                  <p>{service.description}</p>
+
+                  <a href={service.href} className="text-link">
+                    Consultar atendimento
+                    <ArrowRight size={17} aria-hidden="true" />
+                  </a>
+                </article>
+              </Reveal>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+
+========== src\sections\BenefitsSection.tsx ==========
+
+
+import {
+  Clock3,
+  ShieldCheck,
+  Sparkles,
+} from "lucide-react";
+
+import { Reveal } from "../components/Reveal";
+
+const benefits = [
+  {
+    title: "Atendimento prÃ³ximo",
+    description:
+      "Contato direto para entender sua necessidade e orientar sua solicitaÃ§Ã£o.",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Para diferentes ambientes",
+    description:
+      "OpÃ§Ãµes de atendimento para residÃªncias, empresas e diferentes necessidades.",
+    icon: Sparkles,
+  },
+  {
+    title: "SolicitaÃ§Ã£o simplificada",
+    description:
+      "Entre em contato pelo WhatsApp para consultar serviÃ§os e disponibilidade.",
+    icon: Clock3,
+  },
+];
+
+const revealDirections = ["left", "bottom", "right", "top"] as const;
+
+export function BenefitsSection() {
+  return (
+    <section className="benefits section" id="empresas">
+      <div className="container">
+        <Reveal direction="top">
+          <div className="section-heading">
+            <span className="eyebrow">Por que conhecer a Vilma?</span>
+
+            <h2>
+              Simplicidade do primeiro
+              <br />
+              contato ao <span>atendimento</span>
+            </h2>
+          </div>
+        </Reveal>
+
+        <div className="benefit-grid">
+          {benefits.map((benefit, index) => {
+            const Icon = benefit.icon;
+
+            return (
+              <Reveal
+                key={benefit.title}
+                direction={revealDirections[index % revealDirections.length]}
+                delay={index * 100}
+                className="benefit-reveal"
+              >
+                <article className="benefit-item">
+                  <Icon
+                    className="benefit-icon"
+                    size={28}
+                    aria-hidden="true"
+                  />
+
+                  <h3>{benefit.title}</h3>
+
+                  <p>{benefit.description}</p>
+                </article>
+              </Reveal>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+
+========== src\sections\CoverageSection.tsx ==========
+
+
+import { MapPin } from "lucide-react";
+
+import { Reveal } from "../components/Reveal";
+
+const cities = [
+  "SÃ£o Paulo",
+  "Santo AndrÃ©",
+  "SÃ£o Bernardo do Campo",
+  "SÃ£o Caetano do Sul",
+  "Diadema",
+  "MauÃ¡",
+  "RibeirÃ£o Pires",
+  "Rio Grande da Serra",
+];
+
+const revealDirections = ["left", "bottom", "right", "top"] as const;
+
+export function CoverageSection() {
+  return (
+    <section className="coverage section" id="atendimento">
+      <div className="container coverage-content">
+        <Reveal direction="bottom">
+          <div className="coverage-intro">
+            <div className="coverage-icon">
+              <MapPin size={34} aria-hidden="true" />
+            </div>
+
+            <span className="eyebrow">Onde estamos</span>
+
+            <h2>
+              SÃ£o Paulo e Grande <span>ABC</span>
+            </h2>
+
+            <p>
+              Consulte a disponibilidade de atendimento para seu endereÃ§o na
+              cidade de SÃ£o Paulo e nos municÃ­pios do Grande ABC.
+            </p>
+          </div>
+        </Reveal>
+
+        <div className="city-list">
+          {cities.map((city, index) => (
+            <Reveal
+              key={city}
+              direction={revealDirections[index % revealDirections.length]}
+              delay={(index % 4) * 70}
+              className="city-reveal"
+            >
+              <span className="city-chip">
+                <MapPin size={14} aria-hidden="true" />
+                {city}
+              </span>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+
+========== src\sections\ContactSection.tsx ==========
+
+
+import { ArrowRight } from "lucide-react";
+
+import { Button } from "../components/Button";
+import { Reveal } from "../components/Reveal";
+import { getWhatsAppUrl } from "../data/contact";
+
+const WHATSAPP_MESSAGE =
+  "OlÃ¡! Conheci a Chama a Vilma pelo site e gostaria de solicitar informaÃ§Ãµes sobre os serviÃ§os e um orÃ§amento.";
+
+export function ContactSection() {
+  function handleWhatsAppClick() {
+    window.open(
+      getWhatsAppUrl(WHATSAPP_MESSAGE),
+      "_blank",
+      "noopener,noreferrer",
+    );
+  }
+
+  return (
+    <section className="contact section" id="contato">
+      <div className="container">
+        <Reveal direction="bottom">
+          <div className="contact-panel">
+            <span className="eyebrow">Vamos conversar?</span>
+
+            <h2>
+              Seu prÃ³ximo passo comeÃ§a
+              <br />
+              com uma <span>mensagem.</span>
+            </h2>
+
+            <p>
+              Conte o que vocÃª precisa e consulte os serviÃ§os e a
+              disponibilidade de atendimento.
+            </p>
+
+            <Button onClick={handleWhatsAppClick}>
+              Falar pelo WhatsApp
+              <ArrowRight size={18} aria-hidden="true" />
+            </Button>
+
+            <small>
+              A mensagem serÃ¡ aberta no WhatsApp para vocÃª revisar e enviar.
+            </small>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+
+
+========== src\sections\ServiceCatalog.tsx ==========
+
+import { useState } from "react";
+import { ArrowUpRight, Check, MessageCircle } from "lucide-react";
+import { services } from "../data/services";
+import "./ServiceCatalog.css";
+import { getWhatsAppUrl } from "../data/contact";
+
+function requestService(message: string) {
+  window.open(
+    getWhatsAppUrl(message),
+    "_blank",
+    "noopener,noreferrer",
+  );
+}
+
+export function ServiceCatalog() {
+  const [filter, setFilter] = useState("Todos");
+
+  const categories = [
+    "Todos",
+    ...new Set(services.map((service) => service.category)),
+  ];
+
+  const visibleServices =
+    filter === "Todos"
+      ? services
+      : services.filter((service) => service.category === filter);
+
+  return (
+    <section className="catalog section" id="catalogo">
+      <div className="container">
+        <header className="catalog-heading">
+          <span className="eyebrow">Nosso catÃ¡logo</span>
+
+          <h2>
+            Um profissional para cada <span>necessidade</span>
+          </h2>
+
+          <p>
+            Da rotina da casa aos eventos e Ã s empresas, conte o que vocÃª
+            precisa. Vamos consultar as opÃ§Ãµes de profissionais para o seu
+            serviÃ§o.
+          </p>
+        </header>
+
+        <div className="catalog-filters" aria-label="Filtrar serviÃ§os">
+          {categories.map((category) => (
+            <button
+              key={category}
+              type="button"
+              className={
+                filter === category
+                  ? "catalog-filter is-active"
+                  : "catalog-filter"
+              }
+              aria-pressed={filter === category}
+              onClick={() => setFilter(category)}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
+        <div className="catalog-table-wrap">
+          <table className="catalog-table">
+            <thead>
+              <tr>
+                <th scope="col">ServiÃ§o</th>
+                <th scope="col">O que vocÃª precisa saber</th>
+                <th scope="col">Investimento</th>
+                <th scope="col">
+                  <span className="visually-hidden">Solicitar informaÃ§Ãµes</span>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {visibleServices.map((service, index) => (
+                <tr
+                  key={service.id}
+                  className="catalog-row"
+                  style={{
+                    animationDelay: `${Math.min(index, 8) * 45}ms`,
+                  }}
+                >
+                  <th scope="row">
+                    <span className="catalog-service-name">{service.name}</span>
+                    <span className="catalog-category">{service.category}</span>
+                  </th>
+
+                  <td>
+                    <ul className="catalog-details">
+                      {service.details.map((detail) => (
+                        <li key={detail}>
+                          <Check size={15} aria-hidden="true" />
+                          {detail}
+                        </li>
+                      ))}
+                    </ul>
+                  </td>
+
+                  <td>
+                    <span className="catalog-price">
+                      {service.price === null
+                        ? "Sob consulta"
+                        : service.price.toLocaleString("pt-BR", {
+                            style: "currency",
+                            currency: "BRL",
+                          })}
+                    </span>
+
+                    <span className="catalog-price-description">
+                      {service.priceDescription}
+                    </span>
+                  </td>
+
+                  <td>
+                    <button
+                      type="button"
+                      className="catalog-cta"
+                      onClick={() => requestService(service.whatsappMessage)}
+                      aria-label={`Consultar ${service.name} pelo WhatsApp`}
+                    >
+                      <MessageCircle size={17} />
+                      <span>Consultar</span>
+                      <ArrowUpRight size={15} />
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <p className="catalog-note">
+          Os serviÃ§os dependem de consulta de disponibilidade e confirmaÃ§Ã£o das
+          condiÃ§Ãµes de contrataÃ§Ã£o.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+
+
+========== src\sections\ServiceCatalog.css ==========
+
+
+.catalog {
+  background: #f7faff;
+}
+
+.catalog-heading {
+  max-width: 720px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.catalog-heading h2 {
+  color: var(--color-primary-dark);
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+}
+
+.catalog-heading h2 span {
+  color: var(--color-primary);
+}
+
+.catalog-heading p {
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+.catalog-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-bottom: 28px;
+}
+
+.catalog-filter {
+  padding: 9px 15px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--color-text);
+  cursor: pointer;
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.catalog-filter:hover {
+  transform: translateY(-2px);
+}
+
+.catalog-filter.is-active {
+  color: #fff;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.catalog-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 12px 32px rgb(7 59 112 / 5%);
+}
+
+.catalog-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: left;
+}
+
+.catalog-table thead {
+  background: #eaf4ff;
+}
+
+.catalog-table th,
+.catalog-table td {
+  padding: 19px 20px;
+  border-bottom: 1px solid #e8eef5;
+  vertical-align: middle;
+}
+
+.catalog-table thead th {
+  color: var(--color-primary-dark);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.catalog-table tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+.catalog-row {
+  animation: catalog-enter 420ms both;
+  transition: background 180ms ease;
+}
+
+.catalog-row:hover {
+  background: #f5faff;
+}
+
+.catalog-service-name,
+.catalog-category,
+.catalog-price,
+.catalog-price-description {
+  display: block;
+}
+
+.catalog-service-name {
+  color: var(--color-primary-dark);
+  font-weight: 750;
+}
+
+.catalog-category,
+.catalog-price-description {
+  margin-top: 5px;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+}
+
+.catalog-price {
+  color: var(--color-primary-dark);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.catalog-details {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.catalog-details li {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  color: var(--color-text-muted);
+  font-size: 0.87rem;
+  line-height: 1.5;
+}
+
+.catalog-details svg {
+  margin-top: 3px;
+  flex-shrink: 0;
+  color: var(--color-primary);
+}
+
+.catalog-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  background: var(--color-primary);
+  font-size: 0.83rem;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    background 180ms ease;
+}
+
+.catalog-cta:hover {
+  transform: translateY(-2px);
+  background: var(--color-primary-dark);
+}
+
+.catalog-note {
+  margin-top: 18px;
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+  text-align: center;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@keyframes catalog-enter {
+  from {
+    opacity: 0;
+    transform: translateY(9px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 760px) {
+  .catalog-table,
+  .catalog-table tbody {
+    display: block;
+  }
+
+  .catalog-table thead {
+    display: none;
+  }
+
+  .catalog-table tbody {
+    padding: 10px;
+  }
+
+  .catalog-table tbody tr {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    padding: 18px 12px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .catalog-table tbody tr:last-child {
+    border-bottom: 0;
+  }
+
+  .catalog-table th,
+  .catalog-table td {
+    padding: 0;
+    border: 0;
+  }
+
+  .catalog-table tbody tr > th {
+    grid-column: 1 / -1;
+  }
+
+  .catalog-table tbody tr > td:nth-child(2) {
+    grid-column: 1 / -1;
+  }
+
+  .catalog-table tbody tr > td:nth-child(3) {
+    align-self: center;
+  }
+
+  .catalog-table tbody tr > td:nth-child(4) {
+    align-self: center;
+    justify-self: end;
+  }
+
+  .catalog-cta {
+    padding: 10px;
+  }
+
+  .catalog-cta span {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .catalog-row {
+    animation: none;
+  }
+
+  .catalog-filter,
+  .catalog-cta {
+    transition: none;
+  }
+}
+
+
+
+========== src\styles\variables.css ==========
+
+
+:root {
+  /* Identidade da marca */
+  --color-primary: #32145B;
+  --color-primary-dark: #210B40;
+  --color-primary-light: #F3EAFB;
+  --color-primary-action: #7540A6;
+  --color-lilac: #B78AD9;
+  --color-accent: #D99A36;
+
+  /* SuperfÃ­cies */
+  --color-white: #FFFDFE;
+  --color-background: #FAF7FC;
+  --color-surface: #FFFFFF;
+  --color-surface-soft: #F3EAFB;
+
+  /* Textos e bordas */
+  --color-text: #292333;
+  --color-text-muted: #6D6476;
+  --color-border: #E4DCEB;
+  --color-focus: #D99A36;
+
+  /* WhatsApp: manter a cor reconhecÃ­vel do serviÃ§o */
+  --color-whatsapp: #168553;
+
+  /* Tipografia */
+  --font-family-base: Arial, Helvetica, sans-serif;
+
+  /* Layout */
+  --container-width: 1200px;
+  --header-height: 76px;
+
+  /* EspaÃ§amentos */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+
+  /* Cantos e sombras */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+  --shadow-card: 0 8px 28px rgb(50 20 91 / 8%);
+}
+

@@ -1,0 +1,38 @@
+
+/* Contato */
+
+.contact {
+  padding-top: 16px;
+}
+
+.contact-panel {
+  padding: 64px 28px;
+  overflow: hidden;
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at 10% 0%, rgb(183 138 217 / 24%), transparent 35%),
+    linear-gradient(135deg, #f3eafb, #fffdfe);
+  text-align: center;
+}
+
+.contact-panel > p {
+  max-width: 580px;
+  margin: 0 auto 26px;
+}
+
+.contact-panel > .button {
+  margin-inline: auto;
+}
+
+.contact-panel > small {
+  display: block;
+  margin-top: 16px;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 560px) {
+  .contact-panel {
+    padding: 44px 20px;
+    border-radius: 22px;
+  }
+}

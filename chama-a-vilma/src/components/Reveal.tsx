@@ -7,6 +7,8 @@ import {
   type HTMLAttributes,
 } from "react";
 
+import "./Reveal.css";
+
 type RevealDirection = "left" | "right" | "top" | "bottom";
 
 interface RevealProps extends HTMLAttributes<HTMLDivElement> {

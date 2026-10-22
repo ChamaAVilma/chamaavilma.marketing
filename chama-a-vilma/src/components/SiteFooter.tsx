@@ -1,5 +1,6 @@
 
 import { Sparkles } from "lucide-react";
+import "./SiteFooter.css";
 
 export function SiteFooter() {
   return (

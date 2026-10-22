@@ -3,6 +3,8 @@ import { ArrowRight } from "lucide-react";
 
 import { Reveal } from "../components/Reveal";
 
+import "./FeaturedServicesSection.css";
+
 const services = [
   {
     title: "Limpeza residencial",
